@@ -1,3 +1,54 @@
 body {
     padding-top: 5rem;
 }
+/* Apply a basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.form-label {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  .required-text {
+    color: red;
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  .form-field {
+    margin-bottom: 15px; /* Adjust as per your spacing requirements */
+  }
+
+  .form-control {
+    width: 100%; /* Ensure full width for inputs */
+    padding: 8px; /* Adjust padding for input fields */
+    border: 1px solid #ccc; /* Adjust border properties */
+    border-radius: 4px; /* Optional: Adds rounded corners to the input fields */
+    margin-top: 5px; /* Space between label and input field */
+  }
+
+  .form-box {
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 20px; /* Padding around the form elements */
+    border: 1px solid #ddd; /* Border around the form box */
+  }
+
+  .btn {
+    color: #fff;
+    background-color: #333; /* Dark background for submit button */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #555; /* Slightly lighter background on hover */
+  }
+.container{
+    width: 50vw;
+}
+

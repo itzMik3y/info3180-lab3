@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+<style>
+  .form-label {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  .required-text {
+    color: red;
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  .form-field {
+    margin-bottom: 15px; /* Adjust as per your spacing requirements */
+  }
+
+  .form-control {
+    width: 100%; /* Ensure full width for inputs */
+    padding: 8px; /* Adjust padding for input fields */
+    border: 1px solid #ccc; /* Adjust border properties */
+    border-radius: 4px; /* Optional: Adds rounded corners to the input fields */
+    margin-top: 5px; /* Space between label and input field */
+  }
+
+  .form-box {
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 20px; /* Padding around the form elements */
+    border: 1px solid #ddd; /* Border around the form box */
+  }
+
+  .btn {
+    color: #fff;
+    background-color: #333; /* Dark background for submit button */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #555; /* Slightly lighter background on hover */
+  }
+</style>
+{% endblock %}
+{% block main %}
+<div class="container">
+    <div class="form-header">
+        <h1>Contact Form</h1>
+        <p>Fill in this form to contact the site owners.</p>
+    </div>
+    <div class="form-box">
+        <form method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <div class="form-field">
+                {{ form.name.label(class="form-label") }}
+                <span class="required-text">(Required)</span>
+                {{ form.name(class="form-control", id="name", required=True) }}
+            </div>
+            <div class="form-field">
+                {{ form.email.label(class="form-label") }}
+                <span class="required-text">(Required)</span>
+                {{ form.email(class="form-control", id="email", required=True) }}
+            </div>
+            <div class="form-field">
+                {{ form.subject.label(class="form-label") }}
+                <span class="required-text">(Required)</span>
+                {{ form.subject(class="form-control", id="subject", required=True) }}
+            </div>
+            <div class="form-field">
+                {{ form.message.label(class="form-label") }}
+                <span class="required-text">(Required)</span>
+                {{ form.message(class="form-control", id="message", required=True) }}
+            </div>
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
+    </div>
+</div>
+{% endblock %}
